@@ -1,0 +1,144 @@
+header {
+	font-family: Futura; Trebuchet MS;
+	font-weight: bold condensed;
+	color: #07294D;
+   font-size: 25px;
+
+	padding:8px;
+}
+
+header.secondary {
+	padding-left: 75px;
+}
+
+body {
+	list-style-type: none;
+
+	font-family: times;
+	font-weight: normal;
+	color: #06293A;
+   font-size: 15px;
+
+	background-color: #c8eaf5;
+}
+
+h1 {
+	font-family: helvetica;
+	font-weight: italic;
+	color: #17028B;
+	font-size: 30px;
+	
+	padding:4px;
+}
+
+p {
+	padding:6px;
+}
+
+video {
+	border: 5px solid #666;
+	padding: 3px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	border-radius: 8px;
+
+	/* transitions applied to the video element */
+	-moz-transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+
+audio {
+	border: 2px solid #555;
+	padding: 2px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	border-radius: 1px;
+}
+
+button{
+	/*center the button*/
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+	/* add your code to set the top and bottom margins */
+	margin-top: 2px;
+	margin-bottom: 2px;
+
+	/* add an image to your button */
+	-webkit-border-image: url("orangeButton.png") 0 14 0 14 stretch;
+
+	/* set width and height for the button */
+	width: 90px;
+	height: 60px;
+
+}
+
+button.back {
+	/* These lines will override the previous styling of buttons */
+	-webkit-border-image: url("greyButton.png") 0 14 0 14 stretch;
+	width: 60px;
+	height: 30px;
+
+	/* These lines position the back button inside the header */
+	position: absolute;
+	left: 16px;
+	top: 8px;
+}
+
+#content {
+	padding: 3px;
+}
+
+#Drexel {
+	/* Center the image */
+	display: block;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main_nav ul {
+	padding: 0;
+	font-weight: bold;
+}
+
+#main_nav li a{
+	display: block;
+	margin: 6px;
+	padding: 9px;
+	border-radius: 10px; /* rounded corners */
+	list-style-type: none;
+	text-decoration: none;
+	color: #222;
+
+	/* nice gradient shade on the buttons */
+	background-image: -webkit-linear-gradient(top, #f8f8f8 0, #d4d4d4 100%);
+	background-image: linear-gradient(to bottom, #f8f8f8 0, #d4d4d4 100%);
+
+	border: 1px solid #666; /* dark outline */
+}
+
+nav li:active {
+	background-color: #ccc;
+	background-image: none;
+	box-shadow: inset 0 3px 3px rgba(0, 0, 0, .2);
+}
+
+footer {
+	font-family: arial;
+	font-weight: bold;
+	color: #aaa;
+	font-size: 8px;
+
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+
+

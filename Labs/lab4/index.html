@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+		<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+		<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	</head>
+	<body>
+
+		<!-- Start of Welcome -->
+		<div data-role="page" id="welcome">
+		
+			<div data-role="header"> 
+			<h1>Welcome to Bike Drexel</h1>
+			<a href="#welcome" data-role="button" data-icon="home" data-iconpos="left">Home</a>
+			</div><!-- /header -->
+ 
+			<div data-role="content">
+			<!-- Image of Drexel -->
+			<img id="Drexel" src="DrexelU.jpg" />
+		
+			<!-- Buttons to Other Screens -->
+			<p><a href="#stores" data-role="button">Stores</a></p>
+			<p><a href="#register" data-role="button">Register</a></p>      
+			<p><a href="#ride" data-role="button">Ride</a></p>      
+			</div><!-- /content -->
+
+			<!--Basic Popup-->
+			<a href="#popupBasic" data-role="button" data-rel="popup">Open Popup</a>
+			<div data-role="popup" id="popupBasic">
+				<p>This is a completely basic popup, no options set.<p> 
+			</div><!-- /popup -->
+			
+			<!-- tooltip Popup -->
+				<p><a href="#popupInfo" data-rel="popup" data-transition="pop" class = "my-tooltip- btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-info ui-btn-icon- notext">Learn more</a></p>
+				<div data-role="popup" id="popupInfo" class="ui-content" data-theme="a" style="max- width:350px;">Tooltip</div>
+			<!-- /popup -->
+
+			<!--form  Popup -->
+				<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all"> 
+					<form>
+					<div style="padding:10px 20px;"> 
+						<h3>Please sign in</h3>
+							<label for="un" class="ui-hidden-accessible">Username:</label>
+				<input type="text" name="user" id="un" value="" placeholder="username" data-theme="a" 
+				/>
+
+				<label for="pw" class="ui-hidden-accessible">Password:</label> <input type="password" name="pass" id="pw" value="" placeholder="password" data- theme="a" />
+						<button type="submit" data-theme="b">Sign in</button> </div>
+       			</form>
+				</div>
+         <!-- /popup -->
+
+			<!-- Image Popup -->
+				<div data-role="popup" id="popupPhoto" data-overlay-theme="a" data-theme="d" data- corners="false">
+					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui- icon-delete ui-btn-icon-notext
+ui-btn-right">Close</a> <img class="popphoto" src="bikes.jpg.png" alt="Students riding">
+				</div>
+				<p><a href="#popupPhoto" data-role="button" data-rel="popup">Open Photo</a></div>
+         <!-- /popup -->
+
+			<div data-role="footer"> 
+			<h4>Welcome</h4> 
+			</div><!-- /footer -->
+		</div><!-- /Welcome -->
+		
+		<!-- Start of Stores -->
+      <div data-role="page" id="stores">
+
+         <div data-role="header"> 
+         <a data-icon="back" data-rel= "back" back-btn="true">Back</a>
+			<h1>Stores</h1>
+			<a href="#welcome" data-role="button" data-icon="home" data-iconpos="left">Home</a>
+         </div><!-- /header -->
+
+         <div data-role="content">
+         <a href="#welcome" data-role="button" data-icon="home" data-iconpos="left">Back to Welcome Page</a> 
+         </div><!-- /content -->
+
+         <div data-role="footer"> 
+         <h4>Stores</h4>
+         </div><!-- /footer -->
+      </div><!-- /Stores -->
+
+		<!-- Start of Register -->
+      <div data-role="page" id="register">
+
+         <div data-role="header"> 
+         <a data-icon="back" data-rel= "back" back-btn="true">Back</a>
+			<h1>Register</h1>
+			<a href="#welcome" data-role="button" data-icon="home" data-iconpos="left">Home</a>
+         </div><!-- /header -->
+
+         <div data-role="content">
+         <p>Page content goes here.</p> 
+         </div><!-- /content -->
+
+         <div data-role="footer"> 
+         <h4>Register</h4>
+         </div><!-- /footer -->
+      </div><!-- /Register -->
+
+		<!-- Start of Ride -->
+      <div data-role="page" id="ride">
+
+         <div data-role="header"> 
+         <a data-icon="back" data-rel= "back" back-btn="true">Back</a>
+			<h1>Ride</h1>
+         <a href="#welcome" data-role="button" data-icon="home" data-iconpos="left">Home</a>
+			</div><!-- /header -->
+
+         <div data-role="content">
+         <p>Page content goes here.</p> 
+         </div><!-- /content -->
+
+         <div data-role="footer"> 
+         <h4>Ride</h4>
+         </div><!-- /footer -->
+      </div><!-- /Ride -->
+	</body>
+</html>

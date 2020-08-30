@@ -1,0 +1,89 @@
+header {
+	font-family: Futura; Trebuchet MS;
+	font-weight: bold condensed;
+	color: #07294D;
+   font-size: 25px;
+
+	padding:8px;
+}
+
+body {
+	font-family: times;
+	font-weight: normal;
+	color: #06293A;
+   font-size: 15px;
+	
+	background-color: #c8eaf5;
+
+	list-style-type: none;
+}
+
+h1 {
+	font-family: helvetica;
+	font-weight: italic;
+	color: #17028B;
+	font-size: 30px;
+	
+	padding:4px;
+}
+
+p {
+	padding:6px;
+}
+
+#content {
+	padding:3px;
+}
+
+#Drexel {
+	/* Center the image */
+	display: block;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main_nav ul {
+	list-style-type: none;
+	padding: 0;
+	font-weight: bold;
+}
+
+#main_nav li a{
+	display: block;
+	margin: 6px;
+	padding: 9px;
+	border-radius: 10px; /* rounded corners */
+	list-style-type: none;
+	text-decoration: none;
+	color: #222;
+
+	/* nice gradient shade on the buttons */
+	background-image: -webkit-linear-gradient(top, #f8f8f8 0, #d4d4d4 100%);
+	background-image: linear-gradient(to bottom, #f8f8f8 0, #d4d4d4 100%);
+
+	border: 1px solid #666; /* dark outline */
+}
+
+nav li:active {
+	list-style-type: none;
+
+	background-color: #ccc;
+	background-image: none;
+	box-shadow: inset 0 3px 3px rgba(0, 0, 0, .2);
+}
+
+footer {
+	font-family: arial;
+	font-weight: bold;
+	color: #aaa;
+	font-size: 8px;
+
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+
+

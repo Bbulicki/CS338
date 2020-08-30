@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-webapp-status-bar-style" content="black">
+	<meta name="viewport" content="width=device-width, height=device-height, initial- scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" /> 
+	<title>Location</title>
+	<link rel="stylesheet" href="iphone.css">
+</head>
+<body onload="getGPSLatLng()">
+	<header class="secondary"> Sign Up! </header>
+	<button class="back" onclick="location.href='index.html';">Back</button> 
+	<button class="location" id="get_coords" onClick="watchGPS()">Get GPS Coordinates</button>
+	<div id="geolocate">
+		<input id="address" type="text" placeholder="Enter an address here"> 
+		<button class="location" id="geo" onclick="displayMapByAddress()">Geolocate</button>
+	</div>
+	<div id="basic_map" style="width:320px;height:240px;"></div> 
+	<div id="gps_coords">
+		<h1>GPS coordinates below </h1> 
+	</div>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtN150ci-VCFef9qTI9o72AnH3hTp8D1Q"></script>
+	<script>
+		var updateLocation;
+		var lat;
+		var lon;
+	
+		/*This function uses the geolocation.getCurrentPosition method. 
+		The geolocation.getCurrentPosition takes 3 parameters:
+			a success function,
+			an error function,
+			and options in the form of JSON syntax.
+		This function is invoked when the user click on the get_coords button. */
+
+		function getGPS() {
+		//The enableAccuracy option provides you with the highest accuracy but 
+		//consumes a lot of battery life.
+			navigator.geolocation.getCurrentPosition(successGPS,errorGPS,{enableHighAccuracy : true});
+		}
+
+		/* This function is invoked by the geolocation.getCurrentPosition method 
+		used in getGPS() */
+
+		function successGPS(position){
+			//store the location latitude and longtitude info
+			lat=position.coords.latitude;
+			lon=position.coords.longitude;
+
+			//create a new <p> element that displays the current latitude and longitude,
+			//add the new <p> to the div
+			var div=document.getElementById("gps_coords"); 
+			var par=document.createElement("p"); 
+			par.innerHTML="lat="+lat+" ,lon="+lon+"<br>";
+			div.appendChild(par);
+		}
+
+		/* This function is invoked when there is an error in reading GPS info*/
+		function errorGPS() {
+			alert("GPS Error"); 
+		}
+	
+		function watchGPS() {
+			updateLocation=navigator.geolocation.watchPosition(successGPS, errorGPS, {enableHighAccuracy : true});
+		}
+
+		/*This function is used to retrieve GPS coordinates and pass them to a function, 
+		which in turn initializes a Google Map centered on the current location of the 
+		device.*/
+		function getGPSLatLng() {
+			navigator.geolocation.getCurrentPosition(successGPSLatLng,errorGPS,{enableHighAccuracy : true});
+		}
+
+		/*This function initializes a Google Map object centered on the current 
+		location of the device */
+		function successGPSLatLng(position) {
+	   	//store current latitude and longitude information
+			lat=position.coords.latitude; 
+			lon=position.coords.longitude;
+			
+			//create a new google.maps.LatLng object
+			var latlng=new google.maps.LatLng(lat,lon);
+
+			//set Google Map options
+			var myOptions={
+				zoom: 15,
+				center: latlng,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			
+			//create a new map, pass its <div> container as parameter
+			var map= new google.maps.Map(document.getElementById("basic_map"), myOptions);
+	
+			//place a marker with current latitude and longitude on the map
+			var marker= new google.maps.Marker({position: latlng, map: map});
+		}
+
+		/*This function retrieves the address entered to the address field and uses 
+		Google geocoding to find its location (longtitude and latitude, it then 
+		calls the initializeByMap function */
+		function displayMapByAddress() {
+			var address=document.getElementById("address");
+			
+			//create a Geocoder object and use its geocode method. Pass the address 
+			//as a parameter using JSON syntax
+			var geocoder=new google.maps.Geocoder();
+
+			//geocode methods takes two parameters: an address, and a function 
+			//which processes the results. In our case this function calls the 
+			//function initializeByAddress.
+			geocoder.geocode({'address': address.value}, 
+			function(results,status) {
+				initializeByAddress(results[0].geometry.location); 
+			});
+		}
+
+		/*This function initialize a map centered on the location passed as parameter*/
+		function initializeByAddress(location){
+			var myOptions={
+				zoom: 15,
+				center: location,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			
+			var map= new google.maps.Map(document.getElementById("basic_map"), myOptions);
+			
+			var marker= new google.maps.Marker({position: location, map: map}); 
+
+		}
+</script>
+</body>
+</html>

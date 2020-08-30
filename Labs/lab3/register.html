@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-webapp-status-bar-style" content="black">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Register</title>
+	<link rel="stylesheet" href="forms.css">
+	<link rel="stylesheet" href="iphone.css">
+</head>
+<body>
+	<header class="secondary"> Sign up! </header>
+	<button class="back" onclick="location.href='index.html';">Back</button> 
+	<div class="info">
+		<p>Register now to take advantage of this site. </p>
+		<form method="post" id="register">
+			
+			<!-- FORM FIELDS -->
+			<label for="name">Your Name:</label> 
+			<input type="text" name="name" id="name" required>
+			
+			<label for="email">Email:</label>
+			<input type="email" name="email" id="email" required>
+			
+			<label for="dob">Date of Birth:</label> 
+			<input type="date" name="dob" id="dob" max="2007-07-15" required>
+			
+			<label for="pwd">Password:</label>
+			<input type="password" name="pwd" id="pwd" required>
+			<br \a>
+			<input type="submit" value="Sign up"> 
+			<a href="index.html">Nevermind</a>
+		</form>
+	</div>
+	<script src="stay_standalone.js"></script>
+</body>
+</html>
+
